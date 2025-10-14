@@ -1,0 +1,17 @@
+img/drahanskavrchovina.png|Drahanská vrchovina - Moravský kras|773^449|Jednotka
+img/ceskomoravskavrchovina.png|Českomoravská vrchovina|445^308|Podsoustava
+img/trebonskapanev.png|Třeboňská pánev|380^507|Jednotka
+img/stredoceskapahorkatina.png|Středočeská pahorkatina|193^296|Podsoustava
+img/sumava.png|Šumava|139^468|Jednotka
+img/novohradskehory.png|Novohradské hory|384^649|Jednotka
+img/ceskyles.png|Český les|44^240|Jednotka
+img/brdskavrchovina.png|Brdská vrchovina - Brdy,Hřebeny|261^307|Jednotka
+img/krusnehory.png|Krušné hory|69^65|Jednotka
+img/decinskavrchovina.png|Děčínská vrchovina|371^41|Jednotka
+img/mosteckapanev.png|Mostecká pánev|211^80|Jednotka
+img/ceskestredohori.png|České středohoří|286^76|Jednotka
+img/luzickehory.png|Lužické hory|443^52|Jednotka
+img/jizerskehory.png|Jizerské hory|538^64|Jednotka
+img/krkonose.png|Krkonoše|607^103|Jednotka
+img/broumovskavrchovina.png|Broumovská vrchovina|702^148|Jednotka
+img/orlickehory.png|Orlické hory|766^240|Jednotka

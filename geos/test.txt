@@ -1,0 +1,23 @@
+img/ceskyles.png|Český les|44^240
+img/krusnehory.png|Krušné hory|69^65
+img/stredoceskapahorkatina.png|Středočeská pahorkatina|193^296
+img/sumava.png|Šumava|139^468
+img/novohradskehory.png|Novohradské hory|384^649
+img/mosteckapanev.png|Mostecká pánev|211^80
+img/podceskoleskapahorkatina.png|Podčeskoleská pahorkatina|75^238
+img/sumavskepodhuri.png|Šumavské podhůří|161^449
+img/vserubskavrchovina.png|Všerubská vrchovina|103^419
+img/novohradskepodhuri.png|Novohradské podhůří|350^593
+img/benesovskapahorkatina.png|Benešovská pahorkatina|288^296
+img/vlasimskapahorkatina.png|Vlašimská pahorkatina|360^346
+img/drahanskavrchovina.png|Drahanská vrchovina - Moravský kras|773^449
+img/ceskomoravskavrchovina.png|Českomoravská vrchovina|445^308
+img/trebonskapanev.png|Třeboňská pánev|380^507
+img/brdskavrchovina.png|Brdská vrchovina - Brdy,Hřebeny|261^307
+img/decinskavrchovina.png|Děčínská vrchovina|371^41
+img/ceskestredohori.png|České středohoří|286^76
+img/luzickehory.png|Lužické hory|443^52
+img/jizerskehory.png|Jizerské hory|538^64
+img/krkonose.png|Krkonoše|607^103
+img/broumovskavrchovina.png|Broumovská vrchovina|702^148
+img/orlickehory.png|Orlické hory|766^240

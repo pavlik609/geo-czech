@@ -162,12 +162,14 @@ void LoadGeos(const std::string path){
     while(getline(geos_load,line)){
         if(line.substr(0,2) == "--") { continue; }
         if(line == "") { continue; }
+        std::cout<<line<<std::endl;
         std::vector<std::string> args = strsplit(line, '|');
         geos.push_back(geo{});
         geos.back().img = LoadImage(args[0].c_str());
         geos.back().tex = LoadTextureFromImage(geos.back().img);
 
         std::vector<std::string> offset = strsplit(args[2], '^');
+        std::cout<<offset[0]<<std::endl;
         geos.back().offset = {std::stof(offset[0]),std::stof(offset[1])};
         geos.back().name = args[1];
         geos.back().level = args[3];

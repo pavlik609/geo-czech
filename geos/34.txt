@@ -15,3 +15,19 @@ img/jizerskehory.png|Jizerské hory|538^64|Jednotka
 img/krkonose.png|Krkonoše|607^103|Jednotka
 img/broumovskavrchovina.png|Broumovská vrchovina|702^148|Jednotka
 img/orlickehory.png|Orlické hory|766^240|Jednotka
+img/kralickysneznik.png|Králický Sněžník|841^296|Jednotka
+img/hrubyjesenik.png|Hrubý Jeseník|882^298|Jednotka
+img/nizkyjesenik.png|Nízký Jeseník|899^317|Jednotka
+img/ceskatabule.png|Česká tabule|282^85|Soustava
+img/dyjskosvrateckyuval.png|Dyjskosvratecký úval|657^575|Jednotka
+img/hornomoravskyuval.png|Hornomoravský úval|870^399|Jednotka
+img/ostravskapanev.png|Ostravská pánev|1097^399|Jednotka
+img/mikulovskavrchovina.png|Mikulovská vrchovina (Pavlovské vrchy)|768^664|Jednotka
+img/chriby.png|Chřiby|871^570|Jednotka
+img/vizovickavrchovina.png|Vizovická vrchovina|910^562|Jednotka
+img/bilekarpaty.png|Bílé Karpaty|901^607|Jednotka
+img/javorniky.png|Javorníky|1039^555|Jednotka
+img/hostynskovsetinskahornatina.png|Hostýnsko-vsetínská hornatina|969^526|Jednotka
+img/moravskoslezkebeskydy.png|Moravskoslezské Beskydy|1045^480|Jednotka
+img/opavskapahorkatina.png|Opavská pahorkatina|1009^283|Jednotka
+img/dolnomoravskyuval.png|Dolnomoravský úval|778^606|Jednotka

@@ -9,6 +9,10 @@
 #include <unordered_map>
 #include <vector>
 
+#if defined(PLATFORM_WEB)
+#include <emscripten/emscripten.h>
+#endif
+
 float scale = 0;
 float mappos_x = 0;
 float mappos_y = 0;
@@ -18,7 +22,7 @@ int wind_h = 800;
 
 Vector2 mpos = {};
 
-Image highlighted = GenImageColor(wind_w, wind_h, BLANK);
+Image highlighted = GenImageColor(1920,1080, BLANK);
 
 Color colorid = BLACK;
 
@@ -178,80 +182,90 @@ void LoadGeos(const std::string path){
     loaded = true;
 }
 
+Font fnt;
+Color BGCOL = {230,218,228,255};
+Texture2D mapa;
+
+void Update(void){
+    wind_w = GetScreenWidth();
+    wind_h = GetScreenHeight();
+    SetWindowSize(wind_w, wind_h);
+    mpos = GetMousePosition();
+    if(IsWindowResized()){
+        ImageResize(&highlighted,wind_w,wind_h);
+    }
+    colorid = BLACK;
+    if(geos_highlighted.size() > 0) { geos_highlighted.clear(); }
+
+    ImageClearBackground(&highlighted, BLANK);
+    BeginDrawing();
+    ClearBackground(BGCOL);
+    int xdiff = wind_w - mapa.width;
+    int ydiff = wind_h - mapa.height;
+    float scalex = (float)(mapa.width+xdiff)/mapa.width; 
+    float scaley = (float)(mapa.height+ydiff)/mapa.height;
+    scale = fmin(scalex,scaley);
+    mappos_x = (wind_w-scale*mapa.width)/2.0f;
+    mappos_y = (wind_h-scale*mapa.height)/2.0f;
+    DrawTexturePro(mapa, {0,0,(float)mapa.width,(float)mapa.height}, {mappos_x,mappos_y,scale*mapa.width,scale*mapa.height}, {0,0}, 0, WHITE);
+    
+    if(loaded){
+        for(auto level : geos_unclicked){
+            Color c = {180,220,220,80};
+            if(level.first != current_geo->level){
+                c.r -= 70;
+                c.g -= 70;
+                c.b -= 70;
+            }
+            for(auto geo : level.second){
+                DrawGeo(&geos[geo],c);
+            }
+        }
+        for(auto geo : geos_clicked){
+            float factor = fmin(4,geo.first)/4.0f;
+            Color c = ColorLerp(GREEN, MAROON, factor);
+
+            DrawGeoNoCollision(geo.second,c);
+        }
+        if(geo_clickedcount >= 4){
+            DrawGeoNoCollision(current_geo,PURPLE);
+        }
+        CheckCollisionGeos();
+        percentage = fmax(0, 100 * (float(geos_clicked.size()) / geo_clickedcount_total));
+        std::string percent_str = "Skóre: "+ std::to_string(percentage).substr(0,5) + "%";
+
+        if(showendwindow){
+            float boxw = 400;
+            float boxh = 200;
+            float boxx = (wind_w-boxw)/2.0f;
+            float boxy = (wind_h-boxh)/2.0f;
+            GuiWindowBox({boxx,boxy,boxw,boxh}, "Konec");
+            DrawTextEx(fnt,percent_str.c_str(),{boxx+20,boxy+50},32,0,BLACK);
+        }
+        DrawTextEx(fnt,("Další: "+ current_geo->name).c_str(),{5,(float)wind_h-(35+2)},32,0,BLACK);
+        DrawTextEx(fnt,("Úroveń: "+ current_geo->level).c_str(),{5,(float)wind_h-(35+2)*2},32,0,BLACK);
+        DrawTextEx(fnt,percent_str.c_str(),{5,(float)wind_h-(35+2)*3},32,0,BLACK);
+    }
+
+    EndDrawing();
+}
+
 int main (int argc, char *argv[]) { 
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     InitWindow(wind_w, wind_h, "Geomorfologické členění Česka");
-    Font fnt = LoadFontEx("LiberationMono-Regular.ttf",32,NULL,999);
+    fnt = LoadFontEx("LiberationMono-Regular.ttf",32,NULL,999);
     SetRandomSeed(time(NULL));
 
     LoadGeos("geos/34.txt");
 
-    Color BGCOL = {230,218,228,255};
+    mapa = LoadTexture("img/bg.png");  
 
-    Texture2D mapa = LoadTexture("img/bg.png");  
-
-
+#if defined(PLATFORM_WEB)
+    emscripten_set_main_loop(Update, 0, 1);
+#else
     while(!WindowShouldClose()){
-        wind_w = GetScreenWidth();
-        wind_h = GetScreenHeight();
-        mpos = GetMousePosition();
-        if(IsWindowResized()){
-            ImageResize(&highlighted,wind_w,wind_h);
-        }
-        colorid = BLACK;
-        if(geos_highlighted.size() > 0) { geos_highlighted.clear(); }
-
-        ImageClearBackground(&highlighted, BLANK);
-        BeginDrawing();
-        ClearBackground(BGCOL);
-        int xdiff = wind_w - mapa.width;
-        int ydiff = wind_h - mapa.height;
-        float scalex = wind_w < mapa.width ? (float)(mapa.width+xdiff)/mapa.width : 1; 
-        float scaley = wind_h < mapa.height ? (float)(mapa.height+ydiff)/mapa.height : 1;
-        scale = fmin(scalex,scaley);
-        mappos_x = (wind_w-scale*mapa.width)/2.0f;
-        mappos_y = (wind_h-scale*mapa.height)/2.0f;
-        DrawTexturePro(mapa, {0,0,(float)mapa.width,(float)mapa.height}, {mappos_x,mappos_y,scale*mapa.width,scale*mapa.height}, {0,0}, 0, WHITE);
-        
-        if(loaded){
-            for(auto level : geos_unclicked){
-                Color c = {180,220,220,80};
-                if(level.first != current_geo->level){
-                    c.r -= 70;
-                    c.g -= 70;
-                    c.b -= 70;
-                }
-                for(auto geo : level.second){
-                    DrawGeo(&geos[geo],c);
-                }
-            }
-            for(auto geo : geos_clicked){
-                float factor = fmin(4,geo.first)/4.0f;
-                Color c = ColorLerp(GREEN, MAROON, factor);
-
-                DrawGeoNoCollision(geo.second,c);
-            }
-            if(geo_clickedcount >= 4){
-                DrawGeoNoCollision(current_geo,PURPLE);
-            }
-            CheckCollisionGeos();
-            percentage = fmax(0, 100 * (float(geos_clicked.size()) / geo_clickedcount_total));
-            std::string percent_str = "Skóre: "+ std::to_string(percentage).substr(0,5) + "%";
-
-            if(showendwindow){
-                float boxw = 400;
-                float boxh = 200;
-                float boxx = (wind_w-boxw)/2.0f;
-                float boxy = (wind_h-boxh)/2.0f;
-                GuiWindowBox({boxx,boxy,boxw,boxh}, "Konec");
-                DrawTextEx(fnt,percent_str.c_str(),{boxx+20,boxy+50},32,0,BLACK);
-            }
-            DrawTextEx(fnt,("Další: "+ current_geo->name).c_str(),{5,(float)wind_h-(35+2)},32,0,BLACK);
-            DrawTextEx(fnt,("Úroveń: "+ current_geo->level).c_str(),{5,(float)wind_h-(35+2)*2},32,0,BLACK);
-            DrawTextEx(fnt,percent_str.c_str(),{5,(float)wind_h-(35+2)*3},32,0,BLACK);
-        }
-
-        EndDrawing();
+        Update();
     }
+#endif
     return 0;
 }

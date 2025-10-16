@@ -33,3 +33,34 @@ img/vsetinskevrchy.png|Vsetínské vrchy|1035^526|Jednotka
 img/moravskoslezkebeskydy.png|Moravskoslezské Beskydy|1045^480|Jednotka
 img/opavskapahorkatina.png|Opavská pahorkatina|1009^283|Jednotka
 img/dolnomoravskyuval.png|Dolnomoravský úval|778^606|Jednotka
+
+img/boskovickabrazda.png|Boskovická brázda|715^436|Jednotka
+img/zeleznehory.png|Železné hory|582^308|Jednotka
+img/hornosvrateckavrchovina.png|Hornosvratecká vrchovina - Žďárské vrchy|668^395|Jednotka
+--img/krizanovskavrchovina.png|Křižanovská vrchovina|540^422|Jednotka
+img/javorickavrchovina.png|Javořická vrchovina|467^524|Jednotka
+img/ceskobudejovickapanev.png|Českobudějovická pánev|271^485|Jednotka
+img/krivoklatskavrchovina.png|Křivoklátská vrchovina|257^242|Jednotka
+img/horovickapahorkatina.png|Hořovická pahorkatina - Český Kras|274^293|Jednotka
+img/plzenskapahorkatina.png|Plzeňská pahorkatina|110^205|Podsoustava
+img/plaskapahorkatina.png|Plaská pahorkatina|110^260|Jednotka
+img/smrciny.png|Smrčiny|15^154|Jednotka
+img/chebskapanev.png|Chebská pánev|31^184|Jednotka
+img/sokolovskapanev.png|Sokolovská pánev|79^171|Jednotka
+img/slavkovskyles.png|Slavkovský les|83^199|Jednotka
+img/doupovskehory.png|Doupovské hory|164^161|Jednotka
+img/sluknovskapahorkatina.png|Šluknovská pahorkatina|426^8|Jednotka
+img/jestedskokozakovskyhrbet.png|Ještědskokozákovský hřbet|518^85|Jednotka
+img/zitavskapanev.png|Žitavská pánev|516^71|Jednotka
+img/frydlantskapahorkatina.png|Frýdlantská pahorkatina|553^35|Jednotka
+img/krkonosskepodhuri.png|Krkonošské podhůří|564^120|Jednotka
+img/kladskakotlina.png|Kladská kotlina|824^321|Jednotka
+img/rychlebskehory.png|Rychlebské hory|869^233|Jednotka
+img/ralskapahorkatina.png|Ralská pahorkatina|387^85|Jednotka
+img/jicinskapahorkatina.png|Jičínská pahorkatina - Český ráj|514^123|Jednotka
+img/dolnooharskatabule.png|Dolnooharská tabule|282^144|Jednotka
+img/vyskovskabrana.png|Vyškovská brána|824^532|Jednotka
+img/moravskabrana.png|Moravská brána|942^428|Jednotka
+img/roznovskabrazda.png|Rožnovská brázda|1039^515|Jednotka
+img/jablunkovskabrazda.png|Jablunkovská brázda|1173^484|Jednotka
+img/slezskebeskydy.png|Slezské Beskydy|1175^474|Jednotka

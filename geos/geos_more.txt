@@ -1,2 +1,0 @@
-img/ceskyles.png|Český les|44^240
-img/krusnehory.png|Krušné hory|69^65

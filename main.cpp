@@ -201,7 +201,7 @@ void Update(void){
                     break;
             }
         }
-        DrawTextEx(fnt, "Změny:\n16.10.25 - v1.1\n- Přidáno 63\n15.10.25 - v1.0\n- Iniciální verze", {boxx+boxw/2.0f+10,boxy+30}, 22, 0, GRAY);
+        DrawTextEx(fnt, "Změny:\n17.10.25 - v1.1.1\n- Přibližování\n16.10.25 - v1.1\n- Přidáno 63\n15.10.25 - v1.0\n- Iniciální verze", {boxx+boxw/2.0f+10,boxy+30}, 22, 0, GRAY);
     }
     DrawRectangleRec({0,0,(float)wind_w,topbar_height}, {200,190,198,255});
     DrawRectangleRec({0,0,(float)wind_w,topbar_height-2}, {215,204,213,255});

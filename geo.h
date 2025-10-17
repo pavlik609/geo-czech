@@ -44,19 +44,31 @@ static std::unordered_map<std::string,std::vector<int>> geos_unclicked = {
 
 static std::vector<std::pair<geo*,Color>> geos_highlighted = {};
 
+static float zoom = 1;
+static float cam_x = 0;
+static float cam_y = 0;
 
+static bool ui_hovering = false;
 
 static void DrawGeo(geo* geo,Color c){
     Rectangle destination = {
-        mappos_x+(geo->offset.x*scale),
-        mappos_y+(geo->offset.y*scale),
+        mappos_x+(geo->offset.x*scale)+cam_x,
+        mappos_y+(geo->offset.y*scale)+cam_y,
         scale*geo->tex.width,
         scale*geo->tex.height
     };
-    DrawTexturePro(geo->tex, {0,0,(float)geo->tex.width,(float)geo->tex.height}, destination, {0,0}, 0, c);
-    bool aabb = CheckCollisionRecs({mpos.x-1,mpos.y-1,3,3},destination);
+
+    Rectangle destination_zoom = {
+        destination.x*zoom,
+        destination.y*zoom,
+        destination.width*zoom,
+        destination.height*zoom
+    };
+
+    DrawTexturePro(geo->tex, {0,0,(float)geo->tex.width,(float)geo->tex.height}, destination_zoom, {0,0}, 0, c);
+    bool aabb = CheckCollisionRecs({mpos.x-1,mpos.y-1,3,3},destination_zoom);
     if(aabb && (geo->level == current_geo->level) && std::find(geos_unclicked[geo->level].begin(), geos_unclicked[geo->level].end(), geo->idx) != geos_unclicked[geo->level].end()){
-        ImageDraw(&highlighted, geo->img, {0,0,(float)wind_w,(float)wind_h}, destination, colorid);
+        ImageDraw(&highlighted, geo->img, {0,0,(float)wind_w,(float)wind_h}, destination_zoom, colorid);
         geos_highlighted.push_back({geo,colorid});
         colorid.r+=1;
     }
@@ -64,12 +76,20 @@ static void DrawGeo(geo* geo,Color c){
 
 static void DrawGeoNoCollision(geo* geo,Color c){
     Rectangle destination = {
-        mappos_x+(geo->offset.x*scale),
-        mappos_y+(geo->offset.y*scale),
+        mappos_x+(geo->offset.x*scale)+cam_x,
+        mappos_y+(geo->offset.y*scale)+cam_y,
         scale*geo->tex.width,
         scale*geo->tex.height
     };
-    DrawTexturePro(geo->tex, {0,0,(float)geo->tex.width,(float)geo->tex.height}, destination, {0,0}, 0, c);
+
+    Rectangle destination_zoom = {
+        destination.x*zoom,
+        destination.y*zoom,
+        destination.width*zoom,
+        destination.height*zoom
+    };
+
+    DrawTexturePro(geo->tex, {0,0,(float)geo->tex.width,(float)geo->tex.height}, destination_zoom, {0,0}, 0, c);
 }
 
 static std::vector<std::string> strsplit(std::string s, char delim){

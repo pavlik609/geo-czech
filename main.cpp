@@ -17,10 +17,12 @@
 
 float percentage = -1;
 bool showendwindow = false;
+bool changed_layers = false;
 
 void CheckCollisionGeos(){
     for(auto geo : geos_highlighted){
-        if(ColorIsEqual(GetImageColor(highlighted, mpos.x, mpos.y), geo.second)){
+        bool colorequal = ColorIsEqual(GetImageColor(highlighted, mpos.x, mpos.y), geo.second);
+        if(colorequal && !ui_hovering && !changed_layers){
             DrawGeo(geo.first,YELLOW);
             if(IsMouseButtonPressed(0)){
                 if(geo.first->name == current_geo->name){
@@ -41,6 +43,7 @@ void CheckCollisionGeos(){
                     }else{
                         GetNextGeo();
                     }
+                    changed_layers = true;
                 }else{
                     geo_clickedcount++;
                     geo_clickedcount_total++;
@@ -57,6 +60,40 @@ Texture2D mapa;
 int dropdown_active = 0;
 bool dropdown_edit = false;
 
+Camera2D cam = {};
+
+
+void DrawMapMove(float x,float y, float width, float height){
+    DrawRectangleRec({x,y,width,height},WHITE);
+    DrawRectangleLinesEx({x,y,width,height},2,GRAY);
+
+    float x_off = cam_x/(wind_w)*width;
+    float y_off = cam_y/(wind_h)*height;
+
+    float small_w = width*1/zoom;
+    float small_h = height*1/zoom;
+
+    DrawRectangleRec({x-x_off,y-y_off,width*1/zoom,height*1/zoom},BLUE);
+    DrawRectangleLinesEx({x-x_off,y-y_off,width*1/zoom,height*1/zoom},2,SKYBLUE);
+
+    DrawTexturePro(mapa,{0,0,(float)mapa.width,(float)mapa.height},{x,y,width,height},{0,0},0,{255,255,255,100});
+    
+    bool aabb = CheckCollisionRecs({mpos.x-1,mpos.y-1,3,3},{x,y,width,height});
+
+    if(aabb && IsMouseButtonDown(0)){
+        float dx = mpos.x-x-small_w/2.0f;
+        float dy = mpos.y-y-small_h/2.0f;
+        dx = fmax(0,dx);
+        dx = fmin(width-small_w,dx);
+        dy = fmax(0,dy);
+        dy = fmin(height-small_h,dy);
+        cam_x = -((dx)/width)*(wind_w);
+        cam_y = -((dy)/height)*(wind_h);
+    }
+}
+
+float topbar_height = 80;
+
 void Update(void){
     wind_w = GetScreenWidth();
     wind_h = GetScreenHeight();
@@ -67,9 +104,9 @@ void Update(void){
     }
     colorid = BLACK;
     if(geos_highlighted.size() > 0) { geos_highlighted.clear(); }
-
     ImageClearBackground(&highlighted, BLANK);
     BeginDrawing();
+    // BeginMode2D(cam);
     ClearBackground(BGCOL);
     int xdiff = wind_w - mapa.width;
     int ydiff = wind_h - mapa.height;
@@ -78,7 +115,10 @@ void Update(void){
     scale = fmin(scalex,scaley);
     mappos_x = (wind_w-scale*mapa.width)/2.0f;
     mappos_y = (wind_h-scale*mapa.height)/2.0f;
-    DrawTexturePro(mapa, {0,0,(float)mapa.width,(float)mapa.height}, {mappos_x,mappos_y,scale*mapa.width,scale*mapa.height}, {0,0}, 0, WHITE);
+    DrawTexturePro(mapa, {0,0,(float)mapa.width,(float)mapa.height}, {(mappos_x+cam_x)*zoom,(cam_y+mappos_y)*zoom,scale*mapa.width*zoom,scale*mapa.height*zoom}, {0,0}, 0, WHITE);
+    
+    ui_hovering = false;
+    ui_hovering = CheckCollisionRecs({mpos.x-1,mpos.y-1,3,3},{0,0,(float)wind_w,topbar_height});
     
     if(loaded){
         for(auto level : geos_unclicked){
@@ -106,9 +146,11 @@ void Update(void){
             DrawGeoNoCollision(current_geo,PURPLE);
         }
         CheckCollisionGeos();
+        changed_layers = false;
         percentage = fmax(0, 100 * (float(geos_clicked.size()) / geo_clickedcount_total));
         std::string percent_str = "Skóre: "+ std::to_string(percentage).substr(0,5) + "%";
-       if(showendwindow){
+        // EndMode2D();
+        if(showendwindow){
             float boxw = 400;
             float boxh = 200;
             float boxx = (wind_w-boxw)/2.0f;
@@ -137,6 +179,7 @@ void Update(void){
         DrawTextEx(fnt,("Úroveń: "+ current_geo->level).c_str(),{5,(float)wind_h-(35+2)*2},32,0,BLACK);
         DrawTextEx(fnt,percent_str.c_str(),{5,(float)wind_h-(35+2)*3},32,0,BLACK);
     }else{
+        // EndMode2D();
         float boxw = 400;
         float boxh = 200;
         float boxx = (wind_w-boxw)/2.0f;
@@ -160,7 +203,17 @@ void Update(void){
         }
         DrawTextEx(fnt, "Změny:\n16.10.25 - v1.1\n- Přidáno 63\n15.10.25 - v1.0\n- Iniciální verze", {boxx+boxw/2.0f+10,boxy+30}, 22, 0, GRAY);
     }
+    DrawRectangleRec({0,0,(float)wind_w,topbar_height}, {200,190,198,255});
+    DrawRectangleRec({0,0,(float)wind_w,topbar_height-2}, {215,204,213,255});
+    bool zoomslider_result = GuiSlider({250,10,200,30}, "Přiblížení: 1", "5", &zoom, 1, 5);
+    DrawMapMove(475,2,150, 70); 
+    if(zoomslider_result){
+        cam_x = -fmin(wind_w-(wind_w*1/zoom),-cam_x);
+        cam_y = -fmin(wind_h-(wind_h*1/zoom),-cam_y);
+    }
     // DrawFPS(0,0);
+    // Texture tex = LoadTextureFromImage(highlighted);
+    // DrawTexture(tex,0,0,WHITE);
     EndDrawing();
 }
 

@@ -1,0 +1,104 @@
+img/drahanskavrchovina.png|Drahanská vrchovina - Moravský kras|773^449|Jednotka
+img/ceskomoravskavrchovina.png|Českomoravská vrchovina|445^308|Podsoustava
+img/trebonskapanev.png|Třeboňská pánev|380^507|Jednotka
+img/stredoceskapahorkatina.png|Středočeská pahorkatina|193^296|Podsoustava
+img/sumava.png|Šumava|139^468|Jednotka
+img/novohradskehory.png|Novohradské hory|384^649|Jednotka
+img/ceskyles.png|Český les|44^240|Jednotka
+img/brdskavrchovina.png|Brdská vrchovina - Brdy,Hřebeny|261^307|Jednotka
+img/krusnehory.png|Krušné hory|69^65|Jednotka
+img/decinskavrchovina.png|Děčínská vrchovina|371^41|Jednotka
+img/mosteckapanev.png|Mostecká pánev|211^80|Jednotka
+img/ceskestredohori.png|České středohoří|286^76|Jednotka
+img/luzickehory.png|Lužické hory|443^52|Jednotka
+img/jizerskehory.png|Jizerské hory|538^64|Jednotka
+img/krkonose.png|Krkonoše|607^103|Jednotka
+img/broumovskavrchovina.png|Broumovská vrchovina|702^148|Jednotka
+img/orlickehory.png|Orlické hory|766^240|Jednotka
+img/kralickysneznik.png|Králický Sněžník|841^296|Jednotka
+img/hrubyjesenik.png|Hrubý Jeseník|882^298|Jednotka
+img/nizkyjesenik.png|Nízký Jeseník|899^317|Jednotka
+img/ceskatabule.png|Česká tabule|282^85|Soustava
+img/dyjskosvrateckyuval.png|Dyjskosvratecký úval|657^575|Jednotka
+img/hornomoravskyuval.png|Hornomoravský úval|870^399|Jednotka
+img/ostravskapanev.png|Ostravská pánev|1097^399|Jednotka
+img/mikulovskavrchovina.png|Mikulovská vrchovina (Pavlovské vrchy)|768^664|Jednotka
+img/chriby.png|Chřiby|871^570|Jednotka
+img/vizovickavrchovina.png|Vizovická vrchovina|910^562|Jednotka
+img/bilekarpaty.png|Bílé Karpaty|901^607|Jednotka
+img/javorniky.png|Javorníky|1039^555|Jednotka
+img/hostynskevrchy.png|Hostýnské vrchy|969^526|Jednotka
+img/vsetinskevrchy.png|Vsetínské vrchy|1035^526|Jednotka
+--img/hostynskovsetinskahornatina.png|Hostýnsko-vsetínská hornatina|969^526|Jednotka
+img/moravskoslezkebeskydy.png|Moravskoslezské Beskydy|1045^480|Jednotka
+img/opavskapahorkatina.png|Opavská pahorkatina|1009^283|Jednotka
+img/dolnomoravskyuval.png|Dolnomoravský úval|778^606|Jednotka
+
+img/boskovickabrazda.png|Boskovická brázda|715^436|Jednotka
+img/zeleznehory.png|Železné hory|582^308|Jednotka
+img/hornosvrateckavrchovina.png|Hornosvratecká vrchovina - Žďárské vrchy|668^395|Jednotka
+img/javorickavrchovina.png|Javořická vrchovina|467^524|Jednotka
+img/ceskobudejovickapanev.png|Českobudějovická pánev|271^485|Jednotka
+img/krivoklatskavrchovina.png|Křivoklátská vrchovina|257^242|Jednotka
+img/horovickapahorkatina.png|Hořovická pahorkatina - Český Kras|274^293|Jednotka
+img/plzenskapahorkatina.png|Plzeňská pahorkatina|110^205|Podsoustava
+img/plaskapahorkatina.png|Plaská pahorkatina|110^260|Jednotka
+img/smrciny.png|Smrčiny|15^154|Jednotka
+img/chebskapanev.png|Chebská pánev|31^184|Jednotka
+img/sokolovskapanev.png|Sokolovská pánev|79^171|Jednotka
+img/slavkovskyles.png|Slavkovský les|83^199|Jednotka
+img/doupovskehory.png|Doupovské hory|164^161|Jednotka
+img/sluknovskapahorkatina.png|Šluknovská pahorkatina|426^8|Jednotka
+img/jestedskokozakovskyhrbet.png|Ještědskokozákovský hřbet|518^85|Jednotka
+img/zitavskapanev.png|Žitavská pánev|516^71|Jednotka
+img/frydlantskapahorkatina.png|Frýdlantská pahorkatina|553^35|Jednotka
+img/krkonosskepodhuri.png|Krkonošské podhůří|564^120|Jednotka
+img/kladskakotlina.png|Kladská kotlina|824^321|Jednotka
+img/rychlebskehory.png|Rychlebské hory|869^233|Jednotka
+img/ralskapahorkatina.png|Ralská pahorkatina|387^85|Jednotka
+img/jicinskapahorkatina.png|Jičínská pahorkatina - Český ráj|514^123|Jednotka
+img/dolnooharskatabule.png|Dolnooharská tabule|282^144|Jednotka
+img/vyskovskabrana.png|Vyškovská brána|824^532|Jednotka
+img/moravskabrana.png|Moravská brána|942^428|Jednotka
+img/roznovskabrazda.png|Rožnovská brázda|1039^515|Jednotka
+img/jablunkovskabrazda.png|Jablunkovská brázda|1173^484|Jednotka
+img/slezskebeskydy.png|Slezské Beskydy|1175^474|Jednotka
+
+img/podceskoleskapahorkatina.png|Podčeskoleská pahorkatina|75^238|Jednotka
+img/vserubskavrchovina.png|Všerubská vrchovina|103^419|Jednotka
+img/sumavskepodhuri.png|Šumavské podhůří|161^449|Jednotka
+img/novohradskepodhuri.png|Novohradské podhůří|350^593|Jednotka
+img/benesovskapahorkatina.png|Benešovská pahorkatina|288^296|Jednotka
+img/vlasimskapahorkatina.png|Vlašimská pahorkatina|360^346|Jednotka
+img/taborskapahorkatina.png|Táborská pahorkatina|316^432|Jednotka
+img/blatenskapahorkatina.png|Blatenská pahorkatina|193^414|Jednotka
+img/kremesnickavrchovina.png|Křemešnická vrchovina|445^387|Jednotka
+img/hornosazavskapahorkatina.png|Hornosázavská pahorkatina|500^310|Jednotka
+img/krizanovskavrchovina.png|Křižanovská vrchovina|540^422|Jednotka
+img/jevisovickapahorkatina.png|Jevišovická pahorkatina|573^536|Jednotka
+img/bobravskavrchovina.png|Bobravská vrchovina|728^527|Jednotka
+img/tepelskavrchovina.png|Tepelská vrchovina|101^221|Jednotka
+img/podorlickapahorkatina.png|Podorlická pahorkatina|729^203|Jednotka
+img/zabrezskavrchovina.png|Zábřežská vrchovina|809^356|Jednotka
+img/mohelnickabrazda.png|Mohelnická brázda|851^357|Jednotka
+img/hanusovickavrchovina.png|Hanušovická vrchovina|834^299|Jednotka
+img/zlatohorskavrchovina.png|Zlatohorská vrchovina|907^267|Jednotka
+img/vidnavskanizina.png|Vidnavská nížina|880^238|Jednotka
+img/zulovskapahorkatina.png|Žulovská pahorkatina|896^248|Jednotka
+img/dzban.png|Džbán|286^204|Jednotka
+img/prazskaplosina.png|Pražská plošina|343^222|Jednotka
+img/rakovnickapahorkatina.png|Rakovnická pahorkatina|168^205|Jednotka
+img/svihovskavrchovina.png|Švihovská vrchovina|139^331|Jednotka
+img/jizerskatabule.png|Jizerská tabule|434^144|Jednotka
+img/stredolabskatabule.png|Středolabská tabule|403^192|Jednotka
+img/vychodolabskatabule.png|Východolabská tabule|566^217|Jednotka
+img/orlickatabule.png|Orlická tabule|671^221|Jednotka
+img/svitavskapahorkatina.png|Svitavská pahorkatina|616^310|Jednotka
+img/zdanickyles.png|Ždánický les|793^595|Jednotka
+img/litencickapahorkatina.png|Litenčická pahorkatina|826^549|Jednotka
+img/kyjovskapahorkatina.png|Kyjovská pahorkatina|819^607|Jednotka
+img/podbeskydskapahorkatina.png|Podbeskydská pahorkatina|946^442|Jednotka
+img/jablunkovskemezihori.png|Jablunkovské mezihoří|1183^510|Jednotka
+img/ceskoleskaoblast.png|Českoleská oblast|44^238|Podsoustava
+img/sumavskahornatina.png|Šumavská hornatina|139^449|Podsoustava
+img/jihoceskepanve.png|Jihočeské pánve|271^485|Podsoustava

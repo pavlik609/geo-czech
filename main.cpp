@@ -187,7 +187,7 @@ void Update(void){
         GuiPanel({boxx,boxy,boxw,boxh}, "");
         DrawLineEx({boxx+boxw/2.0f,boxy+27},{boxx+boxw/2.0f,boxy+boxh-5},2,LIGHTGRAY);
         DrawTextEx(fnt, "Typ:", {boxx+5,boxy+30}, 32, 0, GRAY);
-        GuiDropdownBox({boxx+80,boxy+30,100,30}, u8"34\n63", &dropdown_active, true);
+        GuiDropdownBox({boxx+80,boxy+30,100,30}, u8"34\n63\nVše", &dropdown_active, true);
         if(GuiButton({boxx+5,boxy+boxh-35,175,30}, "Start")){
             switch(dropdown_active){
                 case 0:

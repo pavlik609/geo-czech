@@ -231,8 +231,13 @@ void Update(void){
                     break;
             }
         }
+        // Hacky fix, i don't know why the scroll_field doesn't work on the web and i don't care enough
+#if defined(PLATFORM_WEB)
+        DrawTextEx(fnt, "Změny:\n19.10.25 - v1.2\n- Přidáno 'Vše'\n17.10.25 - v1.1.1\n- Přibližování\n16.10.25 - v1.1\n- Přidáno '63'", {boxx+boxw/2.0f+10,boxy+30}, 22, 0, GRAY);
+#else
         patch_notes.Draw(boxx+boxw/2.0f-5,boxy+30);
-        // DrawTextEx(fnt, "Změny:\n17.10.25 - v1.1.1\n- Přibližování\n16.10.25 - v1.1\n- Přidáno 63\n15.10.25 - v1.0\n- Iniciální verze", {boxx+boxw/2.0f+10,boxy+30}, 22, 0, GRAY);
+#endif
+    
     }
     DrawRectangleRec({0,0,(float)wind_w,topbar_height}, {200,190,198,255});
     DrawRectangleRec({0,0,(float)wind_w,topbar_height-2}, {215,204,213,255});
@@ -243,8 +248,6 @@ void Update(void){
         cam_y = -fmin(wind_h-(wind_h*1/zoom),-cam_y);
     }
     // DrawFPS(0,0);
-    // Texture tex = LoadTextureFromImage(highlighted);
-    // DrawTexture(tex,0,0,WHITE);
     EndDrawing();
 }
 
@@ -256,9 +259,7 @@ int main (int argc, char *argv[]) {
     GuiSetStyle(DEFAULT,TEXT_SIZE,32);
     SetRandomSeed(time(NULL));
 
-    SetTargetFPS(30);
-
-    // LoadGeos("geos/34.txt");
+    SetTargetFPS(45);
 
     mapa = LoadTexture("img/bg.png");
 

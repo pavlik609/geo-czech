@@ -21,7 +21,7 @@ img/nizkyjesenik.png|Nízký Jeseník|899^317|Jednotka
 img/ceskatabule.png|Česká tabule|282^85|Soustava
 img/dyjskosvrateckyuval.png|Dyjskosvratecký úval|657^575|Jednotka
 img/hornomoravskyuval.png|Hornomoravský úval|870^399|Jednotka
-img/ostravskapanev.png|Ostravská pánev|1097^399|Jednotka
+img/ostravskapanev.png|Ostravská pánev|1088^399|Jednotka
 img/mikulovskavrchovina.png|Mikulovská vrchovina (Pavlovské vrchy)|768^664|Jednotka
 img/chriby.png|Chřiby|871^570|Jednotka
 img/vizovickavrchovina.png|Vizovická vrchovina|910^562|Jednotka
@@ -102,3 +102,33 @@ img/jablunkovskemezihori.png|Jablunkovské mezihoří|1183^510|Jednotka
 img/ceskoleskaoblast.png|Českoleská oblast|44^238|Podsoustava
 img/sumavskahornatina.png|Šumavská hornatina|139^449|Podsoustava
 img/jihoceskepanve.png|Jihočeské pánve|271^485|Podsoustava
+img/brnenskavrchovina.png|Brněnská vrchovina|715^436|Podsoustava
+img/krusnohorskahornatina.png|Krušnohorská hornatina|15^41|Podsoustava
+img/podkrusnohorskaoblast.png|Podkrušnohorská oblast|31^76|Podsoustava
+img/karlovarskavrchovina.png|Karlovarská vrchovina|83^199|Podsoustava
+img/krkonosskaoblast.png|Krkonošská oblast|426^8|Podsoustava
+img/orlickaoblast.png|Orlická oblast|702^148|Podsoustava
+img/jesenickaoblast.png|Jesenická oblast|809^233|Podsoustava
+img/krkonosskojesenickepodhuri.png|Krkonošsko-jesenické podhůří|880^238|Podsoustava
+img/brdskaoblast.png|Brdská oblast|257^204|Podsoustava
+img/severoceskatabule.png|Severočeská tabule|387^85|Podsoustava
+img/stredoceskatabule.png|Středočeská tabule|282^144|Podsoustava
+img/vychodoceskatabule.png|Východočeská tabule|566^217|Podsoustava
+img/opavskapahorkatina.png|Slezská nížina|1009^283|Podsoustava
+img/zapadnivnekarpatskesnizeniny.png|Západní Vněkarpatské sníženiny|657^399|Podsoustava
+img/ostravskapanev.png|Severní Vněkarpatské sníženiny|1088^399|Podsoustava
+img/mikulovskavrchovina.png|Jihomoravské Karpaty|768^664|Podsoustava
+img/stredomoravskekarpaty.png|Středomoravské Karpaty|793^549|Podsoustava
+img/slovenskomoravskekarpaty.png|Slovensko-moravské Karpaty|901^555|Podsoustava
+img/podbeskydskapahorkatina.png|Západobeskydské podhůří|946^442|Podsoustava
+img/zapadnibeskydy.png|Západní Beskydy|969^474|Podsoustava
+img/dolnomoravskyuval.png|Jihomoravská pánev|778^606|Podsoustava
+img/sumavskasubprovincie.png|Šumavská subprovincie|44^238|Soustava
+img/ceskomoravskasubprovincie.png|Česko-moravská subprovincie|193^296|Soustava
+img/krusnohorskasubprovincie.png|Krušnohorská subprovincie|15^41|Soustava
+img/krkonosskojesenickasubprovincie.png|Krkonošsko-jesenická subprovincie|426^8|Soustava
+img/poberounskasubprovincie.png|Poberounská subprovincie|110^204|Soustava
+img/opavskapahorkatina.png|Středopolské nížiny|1009^283|Soustava
+img/vnekarpatskesnizeniny.png|Vněkarpatské sníženiny|657^399|Soustava
+img/vnejsizapadnikarpaty.png|Vnější Západní Karpaty|768^442|Soustava
+img/dolnomoravskyuval.png|Vídeňská pánev|778^606|Soustava

@@ -62,6 +62,36 @@ bool dropdown_edit = false;
 
 Camera2D cam = {};
 
+struct scroll_field {
+    Rectangle area;
+    std::string text;
+    RenderTexture2D rt;
+
+    float bar_w = 10;
+    int scrollvalue = 0;
+    int maxscrollvalue = 100;
+
+    void Draw(float x, float y) {
+        BeginTextureMode(rt);
+        ClearBackground(BLANK);
+
+        DrawRectangleRec({area.x,area.y,area.width,area.height+200}, {215, 215, 215, 255});
+        DrawTextEx(fnt,text.c_str(),{area.x,area.y+(maxscrollvalue-scrollvalue)},22,0,BLACK);
+        
+        EndTextureMode();
+        DrawTexturePro(rt.texture,{area.x,rt.texture.width-area.y,area.width,area.height*-1},{x,y,area.width,area.height},{0,0},0,WHITE);
+        scrollvalue = GuiScrollBar({x+area.width-bar_w,y,bar_w,area.height}, scrollvalue, 10, 100);
+
+    }
+
+    scroll_field(Rectangle area, std::string text) : area(area), text(text){
+        rt = LoadRenderTexture(1920, 1080);
+    }
+    
+    scroll_field() {}
+};
+
+scroll_field patch_notes = {};
 
 void DrawMapMove(float x,float y, float width, float height){
     DrawRectangleRec({x,y,width,height},WHITE);
@@ -185,7 +215,7 @@ void Update(void){
         float boxx = (wind_w-boxw)/2.0f;
         float boxy = (wind_h-boxh)/2.0f;
         GuiPanel({boxx,boxy,boxw,boxh}, "");
-        DrawLineEx({boxx+boxw/2.0f,boxy+27},{boxx+boxw/2.0f,boxy+boxh-5},2,LIGHTGRAY);
+        DrawLineEx({boxx+boxw/2.0f-10,boxy+27},{boxx+boxw/2.0f-10,boxy+boxh-5},2,LIGHTGRAY);
         DrawTextEx(fnt, "Typ:", {boxx+5,boxy+30}, 32, 0, GRAY);
         GuiDropdownBox({boxx+80,boxy+30,100,30}, u8"34\n63\nVše", &dropdown_active, true);
         if(GuiButton({boxx+5,boxy+boxh-35,175,30}, "Start")){
@@ -201,7 +231,8 @@ void Update(void){
                     break;
             }
         }
-        DrawTextEx(fnt, "Změny:\n17.10.25 - v1.1.1\n- Přibližování\n16.10.25 - v1.1\n- Přidáno 63\n15.10.25 - v1.0\n- Iniciální verze", {boxx+boxw/2.0f+10,boxy+30}, 22, 0, GRAY);
+        patch_notes.Draw(boxx+boxw/2.0f-5,boxy+30);
+        // DrawTextEx(fnt, "Změny:\n17.10.25 - v1.1.1\n- Přibližování\n16.10.25 - v1.1\n- Přidáno 63\n15.10.25 - v1.0\n- Iniciální verze", {boxx+boxw/2.0f+10,boxy+30}, 22, 0, GRAY);
     }
     DrawRectangleRec({0,0,(float)wind_w,topbar_height}, {200,190,198,255});
     DrawRectangleRec({0,0,(float)wind_w,topbar_height-2}, {215,204,213,255});
@@ -229,7 +260,9 @@ int main (int argc, char *argv[]) {
 
     // LoadGeos("geos/34.txt");
 
-    mapa = LoadTexture("img/bg.png");  
+    mapa = LoadTexture("img/bg.png");
+
+    patch_notes = scroll_field({0,0,200,150},"Změny:\n19.10.25 - v1.2\n- Přidáno 'Vše'\n17.10.25 - v1.1.1\n- Přibližování\n16.10.25 - v1.1\n- Přidáno '63'\n15.10.25 - v1.0\n- Iniciální verze");
 
 #if defined(PLATFORM_WEB)
     emscripten_set_main_loop(Update, 0, 1);

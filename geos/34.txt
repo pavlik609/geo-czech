@@ -21,7 +21,7 @@ img/nizkyjesenik.png|Nízký Jeseník|899^317|Jednotka
 img/ceskatabule.png|Česká tabule|282^85|Soustava
 img/dyjskosvrateckyuval.png|Dyjskosvratecký úval|657^575|Jednotka
 img/hornomoravskyuval.png|Hornomoravský úval|870^399|Jednotka
-img/ostravskapanev.png|Ostravská pánev|1097^399|Jednotka
+img/ostravskapanev.png|Ostravská pánev|1088^399|Jednotka
 img/mikulovskavrchovina.png|Mikulovská vrchovina (Pavlovské vrchy)|768^664|Jednotka
 img/chriby.png|Chřiby|871^570|Jednotka
 img/vizovickavrchovina.png|Vizovická vrchovina|910^562|Jednotka
